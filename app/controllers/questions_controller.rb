@@ -19,6 +19,11 @@ class QuestionsController < ApplicationController
   def edit
   end
 
+  def flashcards
+    @questions = Question.first
+
+  end
+
   # POST /questions or /questions.json
   def create
     @question = Question.new(question_params)
@@ -65,6 +70,6 @@ class QuestionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def question_params
-      params.require(:question).permit(:question, :answer, :category)
+      params.require(:question).permit(:question, :answer, :category, :level)
     end
 end
