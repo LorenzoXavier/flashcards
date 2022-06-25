@@ -20,8 +20,7 @@ class QuestionsController < ApplicationController
   end
 
   def flashcards
-    @questions = Question.first
-
+    @questions = Question.first(2)
   end
 
   # POST /questions or /questions.json
