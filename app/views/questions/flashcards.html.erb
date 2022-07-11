@@ -33,13 +33,8 @@
                 Click anywhere to flip back
               </div>
               <p class="card-text"><%= question.answer %></p>
-              <div class="row">
-                <div class="col-6 text-end">
-                  <%= link_to "Next card" %>
-                </div>
-                <div class="col-6 text-start">
-                  <%= link_to "Previous card" %>
-                </div>
+              <div class="pagination-section p-5">
+                <%= pagy_bootstrap_nav(@pagy).html_safe %>
               </div>
             </div>
           </div>
@@ -49,12 +44,20 @@
   </div>
 <% end %>
 
+<style>
+  .pagination-section .pagination {
+    justify-content: center!important;
+    /*aligns pagy*/
+  }
+</style>
+
 <script>
-  const card = document.getElementById("flash-card")
+  var card = document.getElementById("flash-card")
 
   card.addEventListener("click", flipCard);
 
   function flipCard() {
-    card.classList.toggle("flipCard")
+    card.classList.toggle("flipCard");
+
   }
 </script>

@@ -25,14 +25,15 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  z-index: -1;
 }
 
 .back {
   position: absolute;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden;
+   -webkit-backface-visibility: hidden;
   transform: rotateY(180deg);
 }
 

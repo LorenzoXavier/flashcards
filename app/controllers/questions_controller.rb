@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
-  before_action :set_question, only: %i[ show edit update destroy ]
+  before_action :set_question, only: %i[ show edit update destroy  ]
+
 
   # GET /questions or /questions.json
   def index
@@ -20,7 +21,7 @@ class QuestionsController < ApplicationController
   end
 
   def flashcards
-    @questions = Question.first(2)
+    @pagy, @questions = pagy(Question.all, items: 1)
   end
 
   # POST /questions or /questions.json
