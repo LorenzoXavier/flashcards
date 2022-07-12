@@ -1,12 +1,75 @@
-<%= link_to "New question", new_question_path %>
-<p style="color: green"><%= notice %></p>
-<h1>Questions</h1>
-<div id="questions">
-  <% @questions.each do |question| %>
-    <%= render question %>
-    <p>
-      <%= link_to "Show this question", question %>
-    </p>
-    <hr>
-  <% end %>
+<%= search_form_for @q do |f| %>
+<div class="row mt-3">
+  <div class="col-2 text-center"><%= link_to "Add a question", new_question_path, class: "btn btn-primary" %></div>
+  <div class="col-2 text-center"><%= f.label :Filter_by_level, class: "mt-2" %></div>
+  <div class="col-2 text-center"><%= f.select(:level_cont, [['Junior'], ['Mid-level']], { :include_blank => '--Showing all--' }, {class: "form-select mt-2"})%></div>
+  <div class="col-2 text-center"><%= f.submit class: "btn btn-primary", value: "Refine" %></div>
+  <div class="col-2 mt-2">Result count:</div>
+  <div class="col-2 mt-2"><%= @q.result.count %></div>
 </div>
+<% end %>
+
+<% @questions.map do |question| %>
+  <div class="row">
+    <div class="col-12 col-lg-6 mx-auto">
+      <div class="flash-card mt-5 pb-5" id="flash-card" >
+        <div class="front">
+          <div class="card text-center p-3">
+            <div class="card-body">
+              <h5 class="card-title">Flashcard</h5>
+              <% if question.category == "Ruby"  %>
+              <h6 class="card-subtitle mb-2 text-muted">
+                <%= image_tag 'rubi.svg', class: "svg-image" %>
+                Ruby on rails -
+                <%= question.level %> developer
+              </h6>
+              <% else %>
+                <h6 class="card-subtitle mb-2 text-muted">
+                  <%= image_tag 'js.svg', class: "svg-image" %>
+                  Javascript -
+                  <%= question.level %> developer
+                </h6>
+              <% end %>
+              <p class="card-text"><%= question.question %></p>
+              <div class="col-6 mx-auto p-1 anywhere-button">
+                Click anywhere to flip
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="back">
+          <div class="card">
+            <div class="card-body">
+              <div class="col-6 mx-auto p-1 text-center anywhere-button">
+                Click anywhere to flip back
+              </div>
+              <p class="card-text"><%= question.answer %></p>
+              <div class="pagination-section p-5">
+                <%= pagy_bootstrap_nav(@pagy).html_safe %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<style>
+  .pagination-section .pagination {
+    justify-content: center!important;
+    /*aligns pagy*/
+  }
+</style>
+
+<script>
+  var card = document.getElementById("flash-card")
+
+  card.addEventListener("click", flipCard);
+
+  function flipCard() {
+    card.classList.toggle("flipCard");
+
+  }
+</script>
+

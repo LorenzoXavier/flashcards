@@ -4,7 +4,8 @@ class QuestionsController < ApplicationController
 
   # GET /questions or /questions.json
   def index
-    @questions = Question.all
+    @q = Question.ransack(params[:q])
+    @pagy, @questions = pagy(@q.result, items: 1)
   end
 
   # GET /questions/1 or /questions/1.json
