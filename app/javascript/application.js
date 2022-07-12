@@ -4,5 +4,5 @@ import "./controllers"
 import * as bootstrap from "bootstrap"
 import "trix"
 import "@rails/actiontext"
-import "custom/questions"
+import "./custom/questions"
 
