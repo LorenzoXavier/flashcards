@@ -1,12 +1,12 @@
 <%= search_form_for @q do |f| %>
-<div class="row mt-3">
-  <div class="col-2 text-center"><%= link_to "Add a question", new_question_path, class: "btn btn-primary" %></div>
-  <div class="col-2 text-center"><%= f.label :Filter_by_level, class: "mt-2" %></div>
-  <div class="col-2 text-center"><%= f.select(:level_cont, [['Junior'], ['Mid-level']], { :include_blank => '--Showing all--' }, {class: "form-select mt-2"})%></div>
-  <div class="col-2 text-center"><%= f.submit class: "btn btn-primary", value: "Refine" %></div>
-  <div class="col-2 mt-2">Result count:</div>
-  <div class="col-2 mt-2"><%= @q.result.count %></div>
-</div>
+  <div class="row mt-3">
+    <div class="col-2 text-center"><%= link_to "Add a question", new_question_path, class: "btn btn-primary" %></div>
+    <div class="col-2 text-center"><%= f.label :Filter_by_level, class: "mt-2" %></div>
+    <div class="col-2 text-center"><%= f.select(:level_cont, [['Junior'], ['Mid-level']], { :include_blank => '--Showing all--' }, {class: "form-select mt-2"})%></div>
+    <div class="col-2 text-center"><%= f.submit class: "btn btn-primary", value: "Refine" %></div>
+    <div class="col-2 mt-2">Result count:</div>
+    <div class="col-2 mt-2"><%= @q.result.count %></div>
+  </div>
 <% end %>
 
 <% @questions.map do |question| %>
