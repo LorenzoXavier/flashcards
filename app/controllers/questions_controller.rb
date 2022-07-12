@@ -1,9 +1,11 @@
 class QuestionsController < ApplicationController
-  before_action :set_question, only: %i[ show edit update destroy ]
+  before_action :set_question, only: %i[ show edit update destroy  ]
+
 
   # GET /questions or /questions.json
   def index
-    @questions = Question.all
+    @q = Question.ransack(params[:q])
+    @pagy, @questions = pagy(@q.result, items: 1)
   end
 
   # GET /questions/1 or /questions/1.json
@@ -17,6 +19,10 @@ class QuestionsController < ApplicationController
 
   # GET /questions/1/edit
   def edit
+  end
+
+  def flashcards
+    @pagy, @questions = pagy(Question.all, items: 1)
   end
 
   # POST /questions or /questions.json
@@ -65,6 +71,6 @@ class QuestionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def question_params
-      params.require(:question).permit(:question, :answer, :category)
+      params.require(:question).permit(:question, :answer, :category, :level)
     end
 end

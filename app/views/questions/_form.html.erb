@@ -24,6 +24,14 @@
         <%= form.label :answer, style: "display: block" %>
         <%= form.rich_text_area :answer, class: "form-control"  %>
       </div>
+      <div class="field mb-3">
+        <%= form.label :catgory, style: "display: block;" %>
+        <%= form.select(:category, [['Ruby'], ['Javascript']], { :include_blank => '-- Select One --' }, {class: "form-select"}) %>
+      </div>
+      <div class="field mb-3">
+        <%= form.label :level, style: "display: block;" %>
+        <%= form.select(:level, [['Junior'], ['Mid-level'], ['Senior']], { :include_blank => '-- Select One --' }, {class: "form-select"}) %>
+      </div>
 
       <div class="field mb-3">
         <%= form.submit "Publish", class: "btn btn-primary mt-3"  %>
