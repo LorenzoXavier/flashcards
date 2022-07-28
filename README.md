@@ -27,15 +27,11 @@ Questions have two attributes to refine:
 * Ruby
 * Javascript
 
-To add more, go into the **questions#_form** partial
+To add more, go into the ``questions#_form`` partial and add what you wish
 
 ## Seed file
 
-There is a seed file that will generate 5 users/sellers and 12 items. 
-
-The Image is generated from a static file - so will be the same for every item. 
-
-When you add a new item when you're signed into the app - you can choose whatever image you like.
+There is a seed file that will is populated with a number of **Junior** and **Mid-level** Ruby and ROR questions
 
 To run the seed file: </br>
 ``$ rails db:seed``
