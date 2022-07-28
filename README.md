@@ -18,33 +18,14 @@ In order to get this running locally, you must:
 * ``rails db:create && rails db:migrate``
 
 ## Schema
-
-1. First ordered list item
-2. Another item
-⋅⋅* Unordered sub-list. 
-1. Actual numbers don't matter, just that it's a number
-⋅⋅1. Ordered sub-list
-4. And another item.
-
-⋅⋅⋅You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we'll use three here to also align the raw Markdown).
-
-⋅⋅⋅To have a line break without a paragraph, you will need to use two trailing spaces.⋅⋅
-⋅⋅⋅Note that this line is separate, but within the same paragraph.⋅⋅
-⋅⋅⋅(This is contrary to the typical GFM line break behaviour, where trailing spaces are not required.)
-
-* Unordered list can use asterisks
-- Or minuses
-+ Or pluses
-
-
 Questions have two attributes to refine:
 1. Level - which is set to:
-⋅⋅* Junior
-⋅⋅* Mid-level
-⋅⋅* Senior
+* Junior
+* Mid-level
+* Senior
 2. Category - currently only:
-⋅⋅* Ruby
-⋅⋅* Javascript
+* Ruby
+* Javascript
 
 To add more, go into the **questions#_form** partial
 
