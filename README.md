@@ -1,6 +1,6 @@
 [logo]: https://github.com/LorenzoXavier/flashcards/blob/0da3d8b293aaaf83bba7b015d046ca55d177d768/app/assets/images/favicon.ico "Logo"
 
-# ![alt text][logo] Ruby on rails Flash Card app[alt text][logo]
+# ![alt text][logo] Ruby on rails Flash Card app ![alt text][logo]
 
 A very basic ROR flash card app - using pagination on the cards to iterate throguh, and vanilla JS for the animations.
 
