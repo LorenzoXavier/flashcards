@@ -1,11 +1,13 @@
 <%= search_form_for @q do |f| %>
   <div class="row mt-3">
-    <div class="col-2 text-center"><%= link_to "Add a question", new_question_path, class: "btn btn-primary" %></div>
-    <div class="col-2 text-center"><%= f.label :Filter_by_level, class: "mt-2" %></div>
-    <div class="col-2 text-center"><%= f.select(:level_cont, [['Junior'], ['Mid-level']], { :include_blank => '--Showing all--' }, {class: "form-select mt-2"})%></div>
-    <div class="col-2 text-center"><%= f.submit class: "btn btn-primary", value: "Refine" %></div>
-    <div class="col-2 mt-2">Result count:</div>
-    <div class="col-2 mt-2"><%= @q.result.count %></div>
+    <div class="text-center"><%= link_to "Add a question", new_question_path, class: "btn btn-success" %></div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-sm-12 col-md-4 text-center" style="margin: auto;"><%= f.label :Filter_by_level %></div>
+    <div class="col-sm-12 col-md-4 mt-2 text-center"><%= f.select(:level_cont, [['Junior'], ['Mid-level']], { :include_blank => '--Showing all--' }, {class: "form-select text-center"})%></div>
+    <div class="col-sm-12 col-md-4 mt-2 text-center submit-button"><%= f.submit class: "btn btn-primary", value: "Refine" %></div>
+    <div class="col-6 mt-2 text-end">Result count:</div>
+    <div class="col-6 mt-2 text-start"><%= @q.result.count %></div>
   </div>
 <% end %>
 
@@ -57,8 +59,17 @@
 
 <style>
   .pagination-section .pagination {
-    justify-content: center!important;
     /*aligns pagy*/
+    justify-content: center!important;
+  }
+  .submit-button .btn {
+    width: 95px!important;
+  }
+
+  @media screen and (max-width: 500px) {
+    .pagination-section .pagination {
+      font-size: 8.5px;
+    }
   }
 </style>
 
