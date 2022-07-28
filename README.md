@@ -20,12 +20,12 @@ In order to get this running locally, you must:
 ## Schema
 Questions have two attributes to refine:
 1. Level - which is set to:
-..* Junior
-..* Mid-level
-..* Senior
+⋅⋅* Junior
+⋅⋅* Mid-level
+⋅⋅* Senior
 2. Category - currently only:
-..* Ruby
-..* Javascript
+⋅⋅* Ruby
+⋅⋅* Javascript
 
 To add more, go into the **questions#_form** partial
 
