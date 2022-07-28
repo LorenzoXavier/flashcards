@@ -1,4 +1,4 @@
-[logo]: https://github.com/LorenzoXavier/flashcards/blob/238ed7dc34d19b986b28865a9a85f63de847aa67/app/assets/images/rubi.svg "Logo"
+[logo]: https://github.com/LorenzoXavier/flashcards/blob/238ed7dc34d19b986b28865a9a85f63de847aa67/app/assets/images/favicon.ico "Logo"
 
 # ![alt text][logo] Ruby on rails Flash Card app[alt text][logo]
 
