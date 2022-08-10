@@ -4,7 +4,7 @@
 
 A very basic ROR flash card app - using pagination on the cards to iterate throguh, and vanilla JS for the animations.
 
-[Live verion on heroku - please be patient on loading times - it's hoseted on the free tier](https://dev-flashcards.herokuapp.com)
+[Live verion on heroku - please be patient on loading times - it's hosted on the free tier](https://dev-flashcards.herokuapp.com)
 
 ## The app uses: 
 * Rails version 7.0.3
